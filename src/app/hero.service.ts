@@ -11,6 +11,11 @@ import { Observable, of } from 'rxjs';
 export class HeroService {
   constructor(private messageService: MessageService) { }
 
+  coutHeroSelect(hero: Hero): void {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add(`selected ${hero.name}`);
+  }
+
   getHeroes(): Observable<Hero[]> {
     // TODO: send the message _after_ fetching the heroes
     this.messageService.add('HeroService: fetched heroes');
